@@ -1,9 +1,9 @@
 import pytest
 
-from ....product import models
+from ....attribute import models as attribute_models
 from ..utils.reordering import perform_reordering
 
-SortedModel = models.AttributeValue
+SortedModel = attribute_models.AttributeValue
 
 
 def _sorted_by_order(items):
@@ -18,7 +18,7 @@ def _get_sorted_map():
 
 @pytest.fixture
 def dummy_attribute():
-    return models.Attribute.objects.create(name="Dummy")
+    return attribute_models.Attribute.objects.create(name="Dummy")
 
 
 @pytest.fixture

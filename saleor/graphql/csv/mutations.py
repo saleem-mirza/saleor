@@ -3,6 +3,7 @@ from typing import Dict, List, Mapping, Union
 import graphene
 from django.core.exceptions import ValidationError
 
+from ...attribute.models import Attribute
 from ...core.permissions import ProductPermissions
 from ...csv import models as csv_models
 from ...csv.events import export_started_event
@@ -11,7 +12,7 @@ from ..core.enums import ExportErrorCode
 from ..core.mutations import BaseMutation
 from ..core.types.common import ExportError
 from ..product.filters import ProductFilterInput
-from ..product.types import Attribute, Product
+from ..product.types import Product
 from ..utils import resolve_global_ids_to_primary_keys
 from ..warehouse.types import Warehouse
 from .enums import ExportScope, FileTypeEnum, ProductFieldEnum
